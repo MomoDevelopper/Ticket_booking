@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Tickets</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Book Tickets for {{ event[1] }}</h1>
+    <p>Date: {{ event[2] }}</p>
+    <p>Time: {{ event[3] }}</p>
+    <p>Location: {{ event[4] }}</p>
+    <p>Seats Available: {{ event[5] }}</p>
+    <form method="post">
+        Name: <input type="text" name="user_name" required><br>
+        Number of Seats: <input type="number" name="seats" min="1" max="{{ event[5] }}" required><br>
+        <button type="submit">Book</button>
+    </form>
+</body>
+</html>

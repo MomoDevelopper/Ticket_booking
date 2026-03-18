@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ticket Booking App</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Available Events</h1>
+    <ul>
+        {% for event in events %}
+        <li>
+            <b>{{ event[1] }}</b> ({{ event[2] }} at {{ event[3] }} - {{ event[4] }}) <br>
+            Seats Available: {{ event[5] }} <br>
+            <a href="/book/{{ event[0] }}">Book Now</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
